@@ -18,26 +18,21 @@
   return blinkyDancer;
 };
 */
-var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
+var makePeppaDancer = function(top, left, timeBetweenSteps) {
   makeDancer.call(this, top, left, timeBetweenSteps);
+  //this.$node belongs to the parent class, we can append it, but if we overwrite it, it will lose the property of the parenet!
+  this.$node.append('<img class="peppaDancer rotate" src="src/img/Peppa.png" width="50" height="50"/>');
 };
 
-makeBlinkyDancer.prototype = Object.create(makeDancer.prototype);//just copy makeDancer.prototype into anther memory address.
-makeBlinkyDancer.prototype.constructor = makeBlinkyDancer;
+makePeppaDancer.prototype = Object.create(makeDancer.prototype);//just copy makeDancer.prototype into anther memory address.
+makePeppaDancer.prototype.constructor = makePeppaDancer;
 //var oldStep = makeDancer.prototype.step;//record the old step so that we can rewrite the new step method then we'll not lost the adress.
 
-makeBlinkyDancer.prototype.step = function() {
+makePeppaDancer.prototype.step = function() {
 
   makeDancer.prototype.step.call(this);
 
   this.$node.toggle();
-  var randomNum = function() {
-    return Math.floor(Math.random() * 256);
-  };
-  var styleSettings = {
-    border: "10px solid rgb(" + randomNum() + ',' + randomNum() + ',' + randomNum() + ')'
-  };
-  this.$node.css(styleSettings);
 };
 
 

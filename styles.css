@@ -1,4 +1,6 @@
 body, html{
+  background-image: url('src/img/stage.png');
+  background-size: cover;
   height:100%;
 }
 body{
@@ -21,7 +23,28 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /* border:10px solid red;
+  border-radius:10px; */
   position:absolute;
+}
+
+.rotate{
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s;
+
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  transition-property: transform;
+
+  overflow:hidden;
+}
+
+
+.hoverstyle{
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
 }
